@@ -1,15 +1,13 @@
 import json
-import pathlib
 from pathlib import Path
 import csv
-
 import requests
 
 #label_url = ''
 #data = requests.get(label_url).json()
 
-with open('label.json') as json_file:
-    data = json.load(json_file)
+# with open('label.json') as json_file:
+#     data = json.load(json_file)
 
 name = 'Vaya Pupkin'
 email = 'vasya@pupkin.com'
