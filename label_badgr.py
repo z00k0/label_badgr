@@ -6,12 +6,13 @@ import requests
 #label_url = ''
 #data = requests.get(label_url).json()
 
-# with open('label.json') as json_file:
-#     data = json.load(json_file)
+with open('label.json') as json_file:
+    data = json.load(json_file)
 
-name = 'Vaya Pupkin'
-email = 'vasya@pupkin.com'
-linkedin = 'https://linkedin.com/in/vasyapupkin'
+body = data['issue']['body'].split('\r\n')
+name = body[0].replace('**Name:** ', '')
+email = body[1].replace('**Email:** ', '')
+linkedin = body[2].replace('**Linkedin Profile:** ', '')
 
 dict = [{'name': name, 'email': email, 'linkedin': linkedin}]
 
